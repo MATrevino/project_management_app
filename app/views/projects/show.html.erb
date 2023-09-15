@@ -46,7 +46,7 @@
               <span class="badge badge-<%= task.badge_color %> mb-3"><%= task.status %></span>
               <div>
                 <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
-                <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
+                <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' %>
               </div>
             </div>
             <h5 class='card-title mb-2' >
