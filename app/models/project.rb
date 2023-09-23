@@ -27,15 +27,15 @@ class Project < ApplicationRecord
 
   def percent_complete
     return 0 if tasks.none?
-
     ((total_complete.to_f / total_tasks) * 100).round
   end
 
   def total_complete
-    completed_tasks = tasks.select { |task| task.complete? }.count
+    tasks.select { |task| task.complete? }.count
   end
 
   def total_tasks
     tasks.count
   end
+
 end
