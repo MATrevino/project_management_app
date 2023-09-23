@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   belongs_to :user
 
   def badge_color
-    case self.status
+    case status
     when 'not-started'
       'secondary'
     when 'in-progress'
@@ -23,5 +23,10 @@ class Project < ApplicationRecord
     else
       'not-started'
     end
+  end
+
+  def percent_complete
+    completed_tasks = tasks.select { |task| task.complete? }.count
+    (completed_tasks.to_f / tasks.count) * 100
   end
 end
